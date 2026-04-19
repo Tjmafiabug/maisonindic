@@ -26,7 +26,7 @@ export function Hero() {
     <div className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden">
       {/* Background image */}
       <div
-        className="absolute inset-0 z-0 bg-cover bg-center"
+        className="absolute inset-0 z-0 bg-cover bg-top md:bg-center"
         style={{
           backgroundImage: `url(https://images.unsplash.com/photo-1558769132-cb1aea458c5e?q=80&w=2874&auto=format&fit=crop)`,
         }}

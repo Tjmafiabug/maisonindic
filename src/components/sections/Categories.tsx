@@ -50,8 +50,36 @@ export function Categories() {
         </h2>
       </div>
 
-      {/* Expanding gallery */}
-      <div className="max-w-6xl mx-auto flex items-stretch gap-3 h-[480px]">
+      {/* Mobile: 2-col grid */}
+      <div className="md:hidden max-w-6xl mx-auto grid grid-cols-2 gap-3">
+        {categories.map((cat, idx) => (
+          <div key={idx} className="relative overflow-hidden aspect-[3/4]">
+            <img
+              src={cat.image}
+              alt={cat.label}
+              className="h-full w-full object-cover object-center"
+            />
+            <div className="absolute inset-0 bg-[#1C1917]/40" />
+            <div className="absolute bottom-0 left-0 right-0 p-4">
+              <h3
+                className="text-white text-base mb-1"
+                style={{ fontFamily: "var(--font-display)", fontWeight: 400 }}
+              >
+                {cat.label}
+              </h3>
+              <p
+                className="text-white/70 text-xs leading-relaxed"
+                style={{ fontFamily: "var(--font-body)" }}
+              >
+                {cat.sub}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Desktop: expanding flex gallery */}
+      <div className="hidden md:flex max-w-6xl mx-auto items-stretch gap-3 h-[480px]">
         {categories.map((cat, idx) => (
           <div
             key={idx}

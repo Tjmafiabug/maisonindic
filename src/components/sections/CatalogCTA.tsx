@@ -13,10 +13,10 @@ const IMAGES = [
 ];
 
 const areaClasses = [
-  "col-start-2 col-end-3 row-start-1 row-end-3",
-  "col-start-1 col-end-2 row-start-2 row-end-4",
-  "col-start-1 col-end-2 row-start-4 row-end-6",
-  "col-start-2 col-end-3 row-start-3 row-end-5",
+  "md:col-start-2 md:col-end-3 md:row-start-1 md:row-end-3",
+  "md:col-start-1 md:col-end-2 md:row-start-2 md:row-end-4",
+  "md:col-start-1 md:col-end-2 md:row-start-4 md:row-end-6",
+  "md:col-start-2 md:col-end-3 md:row-start-3 md:row-end-5",
 ];
 
 export function CatalogCTA() {
@@ -66,7 +66,7 @@ export function CatalogCTA() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="grid grid-cols-2 grid-rows-[50px_150px_50px_150px_50px] gap-3"
+          className="grid grid-cols-2 gap-3 md:grid-rows-[50px_150px_50px_150px_50px]"
         >
           {IMAGES.map((src, i) => (
             <motion.div
@@ -75,7 +75,7 @@ export function CatalogCTA() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.15 }}
-              className={cn("relative overflow-hidden", areaClasses[i])}
+              className={cn("relative overflow-hidden aspect-[3/4] md:aspect-auto", areaClasses[i])}
             >
               <img
                 src={src}
